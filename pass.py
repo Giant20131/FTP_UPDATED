@@ -33,7 +33,7 @@ def verify_password(password: str, stored_hash: str) -> bool:
 
 WEB_USER = "admin"
 # Default hash matches password "admin123"
-WEB_PASS_HASH = "pbkdf2_sha256$310000$TPrPH1j7KLCTzoCohfBzeA==$V7xz0dc6nENgcgBOPApFfKJpUDp7m5VqyNiBelOuB/E="
+WEB_PASS_HASH = "pbkdf2_sha256$310000$5D95TZsN1X6oJ0ORfvfMAw==$wfQr9AQA3TzQw4PVZ4NOJdGr/JxbLTcE2Wn0Padn8ok="
 FTP_PASS = "hardcore"
 
 
