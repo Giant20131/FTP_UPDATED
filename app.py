@@ -305,22 +305,19 @@ def robots():
 @app.route("/sitemap.xml")
 def sitemap():
     url_root = (SITE_URL or request.url_root).rstrip("/")
-    pages = [url_for("login")]
-    if ROBOTS_ALLOW_INDEX:
-        pages.append(url_for("index"))
-    now = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-    body = [
-        '<?xml version="1.0" encoding="UTF-8"?>',
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    pages = [
+        url_root + "/public"  # A public landing page
     ]
-    for path in pages:
+    now = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+    body = ['<?xml version="1.0" encoding="UTF-8"?>',
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for page in pages:
         body.append("  <url>")
-        body.append(f"    <loc>{url_root}{path}</loc>")
+        body.append(f"    <loc>{page}</loc>")
         body.append(f"    <lastmod>{now}</lastmod>")
         body.append("  </url>")
     body.append("</urlset>")
-    return Response("\n".join(body) + "\n", mimetype="application/xml")
-
+    return Response("\n".join(body), mimetype="application/xml")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
