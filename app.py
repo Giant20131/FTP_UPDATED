@@ -56,7 +56,7 @@ ROBOTS_ALLOW_INDEX = _env_bool("ROBOTS_ALLOW_INDEX", False)
 SITE_URL = os.getenv("SITE_URL", "https://example.com")
 GOOGLE_SITE_VERIFICATION = os.getenv(
     "GOOGLE_SITE_VERIFICATION",
-    "your-google-site-verification-token",
+    "7927882ddf10ea81",
 )
 SESSION_MINUTES = 30
 LOGIN_MAX_ATTEMPTS = 5
