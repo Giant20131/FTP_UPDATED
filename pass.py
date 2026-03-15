@@ -40,3 +40,4 @@ FTP_PASS = "hardcore"
 if __name__ == "__main__":
     pwd = getpass.getpass("New password: ")
     print(make_password_hash(pwd))
+
